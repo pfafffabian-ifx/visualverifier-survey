@@ -28,7 +28,7 @@ function SurveyStorage(dbQueryAdapter) {
     return {
       addSurvey: addSurvey,
       getSurvey: function (surveyId, callback) {
-        dbQueryAdapter.retrieve("surveys", [{ name: "id", op: "=", value: "'" + surveyId + "'" }], function (results) { callback(results[0]); });
+        dbQueryAdapter.retrieve("surveys", [{ name: "id", op: "=", value: surveyId }], function (results) { callback(results[0]); });
       },
       storeSurvey: function (id, name, json, callback) {
         dbQueryAdapter.update("surveys", { id: id, json: json }, function (results) { callback(results); });
@@ -41,7 +41,7 @@ function SurveyStorage(dbQueryAdapter) {
       },
       postResults: postResults,
       getResults: function (postId, callback) {
-        dbQueryAdapter.retrieve("results", [{ name: "postid", op: "=", value: "'" + postId + "'" }], function (results) { callback({ id: postId, data: results.map(r => r.json)}); });
+        dbQueryAdapter.retrieve("results", [{ name: "postid", op: "=", value: postId }], function (results) { callback({ id: postId, data: results.map(r => r.json)}); });
       },
       changeName: function (id, name, callback) {
         dbQueryAdapter.update("surveys", { id: id, name: name }, function (results) { callback(results); });

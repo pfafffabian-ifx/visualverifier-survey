@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { MongoClient, ObjectId } = require('mongodb');
 const NoSQLCRUDAdapter = require("./nosql-crud-adapter");
 const SurveyStorage = require("./survey-storage");
 
@@ -14,25 +15,28 @@ const dbConfig = {
     : null
 };
 
-const MongoClient = require('mongodb').MongoClient;
 const url = `mongodb://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}:${dbConfig.port}/`;
-console.log(url);
+// console.log(url);
+const client = new MongoClient(url);
 
 function MongoStorage(session) {
-  function dbConnectFunction(callback) {
-    MongoClient.connect(url, function(err, db) {
-      if (err) throw err;
-      var dbo = db.db(dbConfig.database);
-      callback(dbo, () => {
-        db.close(); 
-        if(!process.env.DATABASE_LOG) {
-          console.log(arguments[0]);
-          console.log(arguments[1]);
-        }
+  function dbConnectFunction(dbCallback) {
+    client.connect()
+      .then(() => {
+        const db = client.db(dbConfig.database);
+        dbCallback(db, function() {
+          if(!!process.env.DATABASE_LOG) {
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+          }
+          client.close();
+        });
+      })
+      .catch(() => {
+        console.error(JSON.stringify(arguments));
       });
-    });
   }
-  const dbQueryAdapter = new NoSQLCRUDAdapter(dbConnectFunction);
+  const dbQueryAdapter = new NoSQLCRUDAdapter(dbConnectFunction, () => new ObjectId().toString());
   return new SurveyStorage(dbQueryAdapter);
 }
 

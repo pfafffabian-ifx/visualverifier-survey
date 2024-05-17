@@ -3,7 +3,7 @@ function SQLCRUDAdapter(queryExecutorFunction) {
       filter = filter || [];
       let where = "";
       if(filter.length > 0) {
-        where += " WHERE " + filter.map(fi => "" + fi.name + fi.op + fi.value).join(" AND ");
+        where += " WHERE " + filter.map(fi => "" + fi.name + fi.op + "'" + fi.value + "'").join(" AND ");
       }
   
       const command = "SELECT * FROM " + tableName + where;

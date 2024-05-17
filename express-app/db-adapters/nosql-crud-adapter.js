@@ -1,66 +1,62 @@
-function NoSQLCRUDAdapter(dbConnectFunction) {
+function NoSQLCRUDAdapter(dbConnectFunction, getId) {
   function getObjects(collectionName, filter, callback) {
     filter = filter || [];
     let query = {};
     filter.forEach(fi => query[fi.name] = fi.value);
-    dbConnectFunction((dbo, finalizeCallback) =>
-      dbo.collection(collectionName).find(query).toArray((error, results) => {
-        finalizeCallback();
-        if (error) {
-          throw error;
-        }
-        callback(results);
-      })
+    dbConnectFunction((db, finalizeCallback) => {
+      db.collection(collectionName).find(query).toArray()
+        .then((results) => {
+          callback(results);
+          finalizeCallback(results);
+        })
+        .catch(() => {
+          console.error(JSON.stringify(arguments));
+        });
+      }
     );
   }
 
-  function deleteObject(tableName, idValue, callback) {
-    const command = "DELETE FROM " + tableName + " WHERE id='" + idValue + "'";
-    dbConnectFunction(command, (error, results) => {
-      if (error) {
-        throw error;
+  function deleteObject(collectionName, idValue, callback) {
+    dbConnectFunction((db, finalizeCallback) => {
+      db.collection(collectionName).deleteMany({ id: idValue })
+        .then((results) => {
+          callback(results);
+          finalizeCallback(results);
+        })
+        .catch(() => {
+          console.error(JSON.stringify(arguments));
+        });
       }
-      callback(results);
-    });
+    );
   }
 
-  function createObject(tableName, object, callback) {
-    const valueNames = [];
-    const valueIndexes = [];
-    const values = [];
-    Object.keys(object).forEach((key, index) => {
-      if(object[key] !== undefined) {
-        valueNames.push(key);
-        valueIndexes.push("$" + (index + 1));
-        values.push(object[key]);
+  function createObject(collectionName, object, callback) {
+    object.id = object.id || getId();
+    dbConnectFunction((db, finalizeCallback) => {
+      db.collection(collectionName).insertOne(object)
+        .then((results) => {
+          callback(object.id);
+          finalizeCallback(results);
+        })
+        .catch(() => {
+          console.error(JSON.stringify(arguments));
+        });
       }
-    });
-    const command = "INSERT INTO " + tableName + " (" + valueNames.join(", ") + ") VALUES (" + valueIndexes.join(", ") + ") RETURNING id";
-    dbConnectFunction(command, values, (error, results) => {
-      if (error) {
-        throw error;
-      }
-      // console.log(JSON.stringify(results));
-      callback(results.rows[0].id);
-    });
+    );
   }
 
-  function updateObject(tableName, object, callback) {
-    const valueNames = [];
-    const values = [];
-    Object.keys(object).forEach((key, index) => {
-      if(object[key] !== undefined) {
-        valueNames.push(key + " = $" + (index + 1));
-        values.push(object[key]);
+  function updateObject(collectionName, object, callback) {
+    dbConnectFunction((db, finalizeCallback) => {
+      db.collection(collectionName).updateOne({ id: object.id }, { $set: object })
+        .then((results) => {
+          callback(results);
+          finalizeCallback(results);
+        })
+        .catch(() => {
+          console.error(JSON.stringify(arguments));
+        });
       }
-    });
-    const command = "UPDATE " + tableName + " SET " + valueNames.join(", ") + " WHERE id = '" + object.id  + "'";
-    dbConnectFunction(command, values, (error, results) => {
-      if (error) {
-        throw error;
-      }
-      callback(object);
-    });
+    );
   }
 
   return {
