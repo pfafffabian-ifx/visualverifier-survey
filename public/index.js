@@ -99,6 +99,246 @@ const comparisons = [
         baseline: "/images/navbar/ifx-navbar-portrait-searchbar-appname_baseline.png",
         implementation: "/images/navbar/ifx-navbar-portrait-searchbar-appname_candidate.png",
         backgroundColor: "#ffffff"
+    },
+    // ALERT
+    {
+        name: "ifx-alert-danger",
+        baseline: "/images/alert/ifx-alert-danger_baseline.png",
+        implementation: "/images/alert/ifx-alert-danger_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-alert-primary-closable",
+        baseline: "/images/alert/ifx-alert-primary-closable_baseline.png",
+        implementation: "/images/alert/ifx-alert-primary-closable_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-alert-success-closable",
+        baseline: "/images/alert/ifx-alert-success-closable_baseline.png",
+        implementation: "/images/alert/ifx-alert-success-closable_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-alert-warning",
+        baseline: "/images/alert/ifx-alert-warning_baseline.png",
+        implementation: "/images/alert/ifx-alert-warning_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    // BUTTON
+    {
+        name: "ifx-button-primary-danger-m-iconleft-disabled",
+        baseline: "/images/button/ifx-button-primary-danger-m-iconleft-disabled_baseline.png",
+        implementation: "/images/button/ifx-button-primary-danger-m-iconleft-disabled_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-button-primary-default-xs-disabled",
+        baseline: "/images/button/ifx-button-primary-default-xs-disabled_baseline.png",
+        implementation: "/images/button/ifx-button-primary-default-xs-disabled_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-button-primary-inverse-l-iconleft",
+        baseline: "/images/button/ifx-button-primary-inverse-l-iconleft_baseline.png",
+        implementation: "/images/button/ifx-button-primary-inverse-l-iconleft_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-button-primary-inverse-s-iconright-disabled",
+        baseline: "/images/button/ifx-button-primary-inverse-s-iconright-disabled_baseline.png",
+        implementation: "/images/button/ifx-button-primary-inverse-s-iconright-disabled_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-button-secondary-danger-s",
+        baseline: "/images/button/ifx-button-secondary-danger-s_baseline.png",
+        implementation: "/images/button/ifx-button-secondary-danger-s_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-button-secondary-danger-xs-iconright",
+        baseline: "/images/button/ifx-button-secondary-danger-xs-iconright_baseline.png",
+        implementation: "/images/button/ifx-button-secondary-danger-xs-iconright_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-button-secondary-default-l-iconright",
+        baseline: "/images/button/ifx-button-secondary-default-l-iconright_baseline.png",
+        implementation: "/images/button/ifx-button-secondary-default-l-iconright_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-button-secondary-default-m-disabled",
+        baseline: "/images/button/ifx-button-secondary-default-m-disabled_baseline.png",
+        implementation: "/images/button/ifx-button-secondary-default-m-disabled_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-button-secondary-inverse-l-disabled",
+        baseline: "/images/button/ifx-button-secondary-inverse-l-disabled_baseline.png",
+        implementation: "/images/button/ifx-button-secondary-inverse-l-disabled_candidate.png",
+        backgroundColor: "#1d1d1d"
+    },
+    {
+        name: "ifx-button-secondary-inverse-m-iconright-disabled",
+        baseline: "/images/button/ifx-button-secondary-inverse-m-iconright-disabled_baseline.png",
+        implementation: "/images/button/ifx-button-secondary-inverse-m-iconright-disabled_candidate.png",
+        backgroundColor: "#1d1d1d"
+    },
+    {
+        name: "ifx-button-secondary-inverse-xs-iconleft-disabled",
+        baseline: "/images/button/ifx-button-secondary-inverse-xs-iconleft-disabled_baseline.png",
+        implementation: "/images/button/ifx-button-secondary-inverse-xs-iconleft-disabled_candidate.png",
+        backgroundColor: "#1d1d1d"
+    },
+    {
+        name: "ifx-button-tertiary-default-s-iconleft-disabled",
+        baseline: "/images/button/ifx-button-tertiary-default-s-iconleft-disabled_baseline.png",
+        implementation: "/images/button/ifx-button-tertiary-default-s-iconleft-disabled_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-button-tertiary-inverse-m-iconleft",
+        baseline: "/images/button/ifx-button-tertiary-inverse-m-iconleft_baseline.png",
+        implementation: "/images/button/ifx-button-tertiary-inverse-m-iconleft_candidate.png",
+        backgroundColor: "#1d1d1d"
+    },
+    {
+        name: "ifx-button-tertiary-inverse-xs",
+        baseline: "/images/button/ifx-button-tertiary-inverse-xs_baseline.png",
+        implementation: "/images/button/ifx-button-tertiary-inverse-xs_candidate.png",
+        backgroundColor: "#1d1d1d"
+    },
+    // ICONBUTTON
+    {
+        name: "ifx-iconbutton-primary-m-square",
+        baseline: "/images/iconbutton/ifx-iconbutton-primary-m-square_baseline.png",
+        implementation: "/images/iconbutton/ifx-iconbutton-primary-m-square_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-iconbutton-primary-s-round-disabled",
+        baseline: "/images/iconbutton/ifx-iconbutton-primary-s-round-disabled_baseline.png",
+        implementation: "/images/iconbutton/ifx-iconbutton-primary-s-round-disabled_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-iconbutton-secondary-l-round",
+        baseline: "/images/iconbutton/ifx-iconbutton-secondary-l-round_baseline.png",
+        implementation: "/images/iconbutton/ifx-iconbutton-secondary-l-round_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-iconbutton-secondary-m-round",
+        baseline: "/images/iconbutton/ifx-iconbutton-secondary-m-round_baseline.png",
+        implementation: "/images/iconbutton/ifx-iconbutton-secondary-m-round_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-iconbutton-secondary-s-square-disabled",
+        baseline: "/images/iconbutton/ifx-iconbutton-secondary-s-square-disabled_baseline.png",
+        implementation: "/images/iconbutton/ifx-iconbutton-secondary-s-square-disabled_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-iconbutton-tertiary-l-square",
+        baseline: "/images/iconbutton/ifx-iconbutton-tertiary-l-square_baseline.png",
+        implementation: "/images/iconbutton/ifx-iconbutton-tertiary-l-square_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-iconbutton-tertiary-l-square-disabled",
+        baseline: "/images/iconbutton/ifx-iconbutton-tertiary-l-square-disabled_baseline.png",
+        implementation: "/images/iconbutton/ifx-iconbutton-tertiary-l-square-disabled_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-iconbutton-tertiary-m-square-disabled",
+        baseline: "/images/iconbutton/ifx-iconbutton-tertiary-m-square-disabled_baseline.png",
+        implementation: "/images/iconbutton/ifx-iconbutton-tertiary-m-square-disabled_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-iconbutton-tertiary-s-round",
+        baseline: "/images/iconbutton/ifx-iconbutton-tertiary-s-round_baseline.png",
+        implementation: "/images/iconbutton/ifx-iconbutton-tertiary-s-round_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    // SPINNER
+    {
+        name: "ifx-spinner-brand-m",
+        baseline: "/images/spinner/ifx-spinner-brand-m_baseline.png",
+        implementation: "/images/spinner/ifx-spinner-brand-m_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-spinner-default-m",
+        baseline: "/images/spinner/ifx-spinner-default-m_baseline.png",
+        implementation: "/images/spinner/ifx-spinner-default-m_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-spinner-default-s",
+        baseline: "/images/spinner/ifx-spinner-default-s_baseline.png",
+        implementation: "/images/spinner/ifx-spinner-default-s_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    // STATUS
+    {
+        name: "ifx-status-engineering300-border",
+        baseline: "/images/status/ifx-status-engineering300-border_baseline.png",
+        implementation: "/images/status/ifx-status-engineering300-border_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-status-engineering300",
+        baseline: "/images/status/ifx-status-engineering300_baseline.png",
+        implementation: "/images/status/ifx-status-engineering300_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-status-ocean500-border",
+        baseline: "/images/status/ifx-status-ocean500-border_baseline.png",
+        implementation: "/images/status/ifx-status-ocean500-border_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-status-ocean500",
+        baseline: "/images/status/ifx-status-ocean500_baseline.png",
+        implementation: "/images/status/ifx-status-ocean500_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-status-orange500-border",
+        baseline: "/images/status/ifx-status-orange500-border_baseline.png",
+        implementation: "/images/status/ifx-status-orange500-border_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-status-orange500",
+        baseline: "/images/status/ifx-status-orange500_baseline.png",
+        implementation: "/images/status/ifx-status-orange500_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    // TOOLTIP
+    {
+        name: "ifx-tooltip-compact-top",
+        baseline: "/images/tooltip/ifx-tooltip-compact-top_baseline.png",
+        implementation: "/images/tooltip/ifx-tooltip-compact-top_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-tooltip-dismissible-bottom-start",
+        baseline: "/images/tooltip/ifx-tooltip-dismissible-bottom-start_baseline.png",
+        implementation: "/images/tooltip/ifx-tooltip-dismissible-bottom-start_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-tooltip-extended-right",
+        baseline: "/images/tooltip/ifx-tooltip-extended-right_baseline.png",
+        implementation: "/images/tooltip/ifx-tooltip-extended-right_candidate.png",
+        backgroundColor: "#ffffff"
     }
 ]
 
