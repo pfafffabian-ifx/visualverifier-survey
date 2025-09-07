@@ -70,17 +70,50 @@ const surveyJson = {
             
             ],
         }))
-    ]
+    ],
+    cookieName: "visualverifier_survey",
 };
 
 document.addEventListener("DOMContentLoaded", function() {
     survey.render(document.getElementById("surveyElement"));
 });
 
-function alertResults (sender) {
-    const results = JSON.stringify(sender.data);
-    alert(results);
+function surveyComplete (survey) {
+    const userId = "user-" + Math.random().toString(36).substring(2, 15);
+    survey.setValue("userId", userId);
+
+    const payload = {
+        postId: userId,
+        surveyResult: survey.data
+    };
+
+    saveSurveyResults(
+        "/api/post",
+        payload
+    )
 }
 
+function saveSurveyResults(url, json) {
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=UTF-8'
+        },
+        body: JSON.stringify(json)
+    })
+    .then(response => {
+        if (response.ok) {
+            cconsole.log("Survey results saved successfully.");
+            // Handle success
+        } else {
+            console.error("Error saving survey results.");
+            // Handle error
+        }
+    })
+    .catch(error => {
+        console.error("Error saving survey results:", error);
+        // Handle error
+    });
+}
 const survey = new Survey.Model(surveyJson);
-survey.onComplete.add(alertResults);
+survey.onComplete.add(surveyComplete);
