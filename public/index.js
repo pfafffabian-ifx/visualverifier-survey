@@ -520,13 +520,13 @@ document.querySelectorAll('img-comparison-slider').forEach(adjustSlider);
                                 <img style="border: 1px solid black;" slot="first" src="${comparison.implementation}" />
                                 <img style="border: 1px solid black;" slot="second" src="${comparison.baseline}" />
                             </img-comparison-slider>
-                            <div style="width: 100%; display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="width: 100%; display: flex; justify-content: space-between;">
                                 <span>Implementation</span>
                                 <span>Design</span>
                             </div>
 
-                            <details style="align-self: start; margin-top: 10px; cursor: pointer;">
-                                <summary>Click to show a side-by-side comparison</summary>
+                            <div style="align-self: start; margin-top: 16px; cursor: pointer;">
+                                <span class="sv-string-viewer" style="font-weight: 600">Side-by-Side comparison</span>
                                 <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
                                     <div style="flex: 1; min-width: 240px; text-align: center;">
                                         <img style="border: 1px solid black; max-width: 100%; height: auto" slot="first" src="${comparison.implementation}" />
