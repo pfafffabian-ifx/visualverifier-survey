@@ -14,6 +14,13 @@ const comparisons = [
     }
 ]
 
+function invertColor(hex) {
+  const color = hex.slice(1); // remove '#'
+  const num = parseInt(color, 16);
+  const inverted = (0xFFFFFF ^ num).toString(16).padStart(6, '0');
+  return `#${inverted}`;
+}
+
 const surveyJson = {
     pages: [
         {
@@ -107,6 +114,7 @@ const surveyJson = {
                     title: "Compare these two images:",
                     type: "html",
                     html: `
+                        
                         <style>
                             img {
                                 background-color: ${comparison.backgroundColor};
@@ -115,6 +123,9 @@ const surveyJson = {
                             img-comparison-slider {
                                 width: 100%;
                                 max-width: 600px;
+                                --divider-color: ${invertColor(comparison.backgroundColor)};
+                                --default-handle-color: ${invertColor(comparison.backgroundColor)};
+                                --divider-width: 2px;
                             }
                             img-comparison-slider img {
                                 width: 100%;
@@ -122,6 +133,9 @@ const surveyJson = {
                             }
                         </style>
                         <div class="sd-element--with-frame sd-element" style="display: flex; flex-direction: column; align-items: center;">
+                            <div class="sd-question__header sd-element__header" style="width: 100%; text-align: start; margin-bottom: 10px;">
+                                <span class="sv-string-viewer" style="font-weight: 600">Please use the slider below to compare the images.</strong>
+                            </div>
                             <img-comparison-slider>
                                 <img slot="first" src="${comparison.baseline}" />
                                 <img slot="second" src="${comparison.implementation}" />
