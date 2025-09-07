@@ -510,7 +510,7 @@ const surveyJson = {
                             });
 
                             // Also check existing sliders
-document.querySelectorAll('img-comparison-slider').forEach(adjustSlider);
+                            document.querySelectorAll('img-comparison-slider').forEach(adjustSlider);
                         </script>
                         <div class="sd-element--with-frame sd-element" style="display: flex; flex-direction: column; align-items: center;">
                             <div class="sd-question__header sd-element__header" style="width: 100%; text-align: start; margin-bottom: 10px;">
