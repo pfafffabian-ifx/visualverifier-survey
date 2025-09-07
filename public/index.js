@@ -217,8 +217,8 @@ document.querySelectorAll('img-comparison-slider').forEach(adjustSlider);
                                 <img style="border: 1px solid black;" slot="second" src="${comparison.baseline}" />
                             </img-comparison-slider>
                             <div style="width: 100%; display: flex; justify-content: space-between; margin-top: 10px;">
-                                <p>Implementation</p>
-                                <p>Design</p>
+                                <span>Implementation</span>
+                                <span>Design</span>
                             </div>
 
                             <details style="align-self: start; margin-top: 10px; cursor: pointer;">
