@@ -64,11 +64,15 @@ const surveyJson = {
                 },
                 {
                     name: "experience",
-                    title: "How would you rate your experience with UI design and development?",
-                    type: "rating",
-                    rateType: "stars",
-                    minRateDescription: "Novice",
-                    maxRateDescription: "Expert",
+                    title: "How many years of experience do you have in software or design?",
+                    type: "dropdown",
+                    choices: [
+                        { value: "<1", text: "Less than 1 year" },
+                        { value: "1-3", text: "1-3 years" },
+                        { value: "3-5", text: "3-5 years" },
+                        { value: "5-10", text: "5-10 years" },
+                        { value: "10+", text: "More than 10 years" }
+                    ],
                     isRequired: true,
                     requiredErrorText: "Please submit an answer."
                 }
