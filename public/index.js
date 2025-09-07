@@ -137,8 +137,7 @@ const surveyJson = {
                     name: `${comparison.name}`,
                     title: "Compare these two images:",
                     type: "html",
-                    html: `
-                        
+                    html: `  
                         <style>
                             img {
                                 background-color: ${comparison.backgroundColor};
@@ -156,14 +155,66 @@ const surveyJson = {
                                 height: auto; /* Maintains aspect ratio */
                                 object-fit: contain;
                             }
+
+                            img-comparison-slider:focus {
+                                outline: none;    
+                            }
                         </style>
+                        <script>
+                            // Watch for when sliders are added to the DOM
+                            const observer = new MutationObserver((mutations) => {
+                                mutations.forEach((mutation) => {
+                                    mutation.addedNodes.forEach((node) => {
+                                        if (node.nodeType === 1) { // Element node
+                                            const sliders = node.querySelectorAll ? 
+                                                node.querySelectorAll('img-comparison-slider') : [];
+                                            
+                                            // Also check if the node itself is a slider
+                                            if (node.tagName === 'IMG-COMPARISON-SLIDER') {
+                                                adjustSlider(node);
+                                            }
+                                            
+                                            sliders.forEach(adjustSlider);
+                                        }
+                                    });
+                                });
+                            });
+
+                            function adjustSlider(slider) {
+                                const images = slider.querySelectorAll('img');
+                                
+                                // Simple promise-based approach
+                                Promise.all(Array.from(images).map(img => {
+                                    if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+                                    return new Promise(resolve => {
+                                        img.onload = resolve;
+                                        img.onerror = resolve; // Handle errors gracefully
+                                    });
+                                })).then(() => {
+                                    const maxHeight = Math.max(...Array.from(images).map(img => img.naturalHeight));
+                                    const maxWidth = Math.max(...Array.from(images).map(img => img.naturalWidth));
+                                    
+                                    slider.style.height = maxHeight + 'px';
+                                    slider.style.maxWidth = maxWidth + 'px';
+                                });
+                            }
+
+                            // Start observing
+                            observer.observe(document.body, {
+                                childList: true,
+                                subtree: true
+                            });
+
+                            // Also check existing sliders
+document.querySelectorAll('img-comparison-slider').forEach(adjustSlider);
+                        </script>
                         <div class="sd-element--with-frame sd-element" style="display: flex; flex-direction: column; align-items: center;">
                             <div class="sd-question__header sd-element__header" style="width: 100%; text-align: start; margin-bottom: 10px;">
                                 <span class="sv-string-viewer" style="font-weight: 600">Please use the slider below to compare the images.</strong>
                             </div>
-                            <img-comparison-slider>
-                                <img slot="first" src="${comparison.implementation}" />
-                                <img slot="second" src="${comparison.baseline}" />
+                            <img-comparison-slider style="border: 2px solid black">
+                                <img style="border: 1px solid black;" slot="first" src="${comparison.implementation}" />
+                                <img style="border: 1px solid black;" slot="second" src="${comparison.baseline}" />
                             </img-comparison-slider>
                             <div style="width: 100%; display: flex; justify-content: space-between; margin-top: 10px;">
                                 <p>Implementation</p>
@@ -302,3 +353,38 @@ function saveSurveyResults(url, json) {
 }
 const survey = new Survey.Model(surveyJson);
 survey.onComplete.add(surveyComplete);
+
+// After creating your survey, before survey.render()
+survey.onAfterRenderQuestion.add((sender, options) => {
+    // Check if this question contains img-comparison-slider
+    const sliders = options.htmlElement.querySelectorAll('img-comparison-slider');
+    
+    if (sliders.length > 0) {
+        // Small delay to ensure the slider component is fully initialized
+        setTimeout(() => {
+            sliders.forEach(adjustSlider);
+        }, 100);
+    }
+});
+
+function adjustSlider(slider) {
+    if (slider.dataset.adjusted) return; // Prevent double-processing
+    
+    const images = slider.querySelectorAll('img[slot]');
+    if (images.length === 0) return;
+    
+    Promise.all(Array.from(images).map(img => {
+        if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+        return new Promise(resolve => {
+            img.onload = resolve;
+            img.onerror = resolve;
+        });
+    })).then(() => {
+        const maxHeight = Math.max(...Array.from(images).map(img => img.offsetHeight));
+        const maxWidth = Math.max(...Array.from(images).map(img => img.offsetWidth));
+        
+        slider.style.height = maxHeight + 'px';
+        slider.style.maxWidth = maxWidth + 'px';
+        slider.dataset.adjusted = 'true';
+    });
+}
