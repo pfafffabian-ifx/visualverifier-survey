@@ -56,11 +56,20 @@ const surveyJson = {
                     isRequired: true,
                     requiredErrorText: "Please submit an answer.",
                     choices: [
-                        "Software Developer",
-                        "Designer",
-                        "Product Manager",
+                        "Software Development / Engineering",
+                        "UX / Design",
+                        "Product or Project Management",
+                        "Communications / Marketing",
                         "Other"
                     ]
+                },
+                {
+                    name: "roleOther",
+                    title: "Please specify your role",
+                    type: "text",
+                    visibleIf: "{role} = 'Other'",
+                    isRequired: true,
+                    requiredErrorText: "Please submit an answer."
                 },
                 {
                     name: "experience",
@@ -72,6 +81,19 @@ const surveyJson = {
                         { value: "3-5", text: "3-5 years" },
                         { value: "5-10", text: "5-10 years" },
                         { value: "10+", text: "More than 10 years" }
+                    ],
+
+                    isRequired: true,
+                    requiredErrorText: "Please submit an answer."
+                },
+                {
+                    name: "reviewExperience",
+                    title: "How familiar are you with reviewing design implementations?",
+                    type: "dropdown",
+                    choices: [
+                        { value: "1", text: "Not at all" },
+                        { value: "2", text: "Somewhat" },
+                        { value: "4", text: "Very" },
                     ],
 
                     isRequired: true,
