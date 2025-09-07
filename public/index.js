@@ -1,5 +1,6 @@
 
 const comparisons = [
+    //  CHECKBOXES
     {
         name: "ifx-checkbox-m-checked-indeterminate",
         baseline: "/images/checkbox/ifx-checkbox-m-checked-indeterminate_baseline.png",
@@ -24,6 +25,7 @@ const comparisons = [
         implementation: "/images/checkbox/ifx-checkbox-s-unchecked-error_candidate.png", // TODO: Missing
         backgroundColor: "#ffffff"
     },
+    //  DROPDOWN MENU
     {
         name: "ifx-dropdownmenu-s",
         baseline: "/images/dropdownmenu/ifx-dropdownmenu-s_baseline.png",
@@ -34,6 +36,68 @@ const comparisons = [
         name: "ifx-dropdownmenu-m-icon",
         baseline: "/images/dropdownmenu/ifx-dropdownmenu-m-icon_baseline.png",
         implementation: "/images/dropdownmenu/ifx-dropdownmenu-m-icon_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    // FOOTER
+    {
+        name: "ifx-footer-landscape-large",
+        baseline: "/images/footer/ifx-footer-landscape-large_baseline.png",
+        implementation: "/images/footer/ifx-footer-landscape-large_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-footer-landscape-medium",
+        baseline: "/images/footer/ifx-footer-landscape-medium_baseline.png",
+        implementation: "/images/footer/ifx-footer-landscape-medium_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-footer-landscape-small",
+        baseline: "/images/footer/ifx-footer-landscape-small_baseline.png",
+        implementation: "/images/footer/ifx-footer-landscape-small_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-footer-portrait-large",
+        baseline: "/images/footer/ifx-footer-portrait-large_baseline.png",
+        implementation: "/images/footer/ifx-footer-portrait-large_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-footer-portrait-medium",
+        baseline: "/images/footer/ifx-footer-portrait-medium_baseline.png",
+        implementation: "/images/footer/ifx-footer-portrait-medium_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-footer-portrait-small",
+        baseline: "/images/footer/ifx-footer-portrait-small_baseline.png",
+        implementation: "/images/footer/ifx-footer-portrait-small_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    // NAVBAR
+    {
+        name: "ifx-navbar-landscape-appname",
+        baseline: "/images/navbar/ifx-navbar-landscape-appname_baseline.png",
+        implementation: "/images/navbar/ifx-navbar-landscape-appname_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-navbar-landscape-searchbar",
+        baseline: "/images/navbar/ifx-navbar-landscape-searchbar_baseline.png",
+        implementation: "/images/navbar/ifx-navbar-landscape-searchbar_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-navbar-portrait",
+        baseline: "/images/navbar/ifx-navbar-portrait_baseline.png",
+        implementation: "/images/navbar/ifx-navbar-portrait_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-navbar-portrait-searchbar-appname",
+        baseline: "/images/navbar/ifx-navbar-portrait-searchbar-appname_baseline.png",
+        implementation: "/images/navbar/ifx-navbar-portrait-searchbar-appname_candidate.png",
         backgroundColor: "#ffffff"
     }
 ]
