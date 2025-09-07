@@ -198,13 +198,20 @@ const surveyJson = {
         })),
         {
             name: "reportIntro",
-            title: "Almost done!",
+            title: "Thank you for rating all the images! 🎉",
             elements: [
                 {
                     name: "introduction",
                     type: "html",
                     html: `
-                        
+                    <p>In the next step, you'll see a short preview of my tool's report.</p>
+
+                    <p>
+                        The tool automatically compares UI implementations with the Figma design whenever a change is proposed. 
+                        It then generates a visual report, which is attached to the corresponding GitHub pull request.
+                    </p>
+
+                    <p>Please take a look at the report on the following page and then answer a few brief questions.</p>
                     `,
                     isRequired: true,
                     requiredErrorText: "Please submit an answer."
