@@ -248,9 +248,9 @@ const comparisons = [
         backgroundColor: "#ffffff"
     },
     {
-        name: "ifx-iconbutton-tertiary-l-square-disabled",
-        baseline: "/images/iconbutton/ifx-iconbutton-tertiary-l-square-disabled_baseline.png",
-        implementation: "/images/iconbutton/ifx-iconbutton-tertiary-l-square-disabled_candidate.png",
+        name: "ifx-iconbutton-primary-l-square-disabled",
+        baseline: "/images/iconbutton/ifx-iconbutton-primary-l-square-disabled_baseline.png",
+        implementation: "/images/iconbutton/ifx-iconbutton-primary-l-square-disabled_candidate.png",
         backgroundColor: "#ffffff"
     },
     {
@@ -551,7 +551,7 @@ document.querySelectorAll('img-comparison-slider').forEach(adjustSlider);
                     ],
                     type: "rating",
                     rateType: "labels",
-                    isRequired: true,
+                    // isRequired: true,
                     requiredErrorText: "Please submit an answer."
                 },
                 {
@@ -564,7 +564,7 @@ document.querySelectorAll('img-comparison-slider').forEach(adjustSlider);
                     ],
                     type: "rating",
                     rateType: "labels",
-                    isRequired: true,
+                    // isRequired: true,
                     requiredErrorText: "Please submit an answer."
                 },
                 {
