@@ -24,6 +24,18 @@ const comparisons = [
         implementation: "/images/checkbox/ifx-checkbox-s-unchecked-error_candidate.png", // TODO: Missing
         backgroundColor: "#ffffff"
     },
+    {
+        name: "ifx-dropdownmenu-s",
+        baseline: "/images/dropdownmenu/ifx-dropdownmenu-s_baseline.png",
+        implementation: "/images/dropdownmenu/ifx-dropdownmenu-s_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-dropdownmenu-m-icon",
+        baseline: "/images/dropdownmenu/ifx-dropdownmenu-m-icon_baseline.png",
+        implementation: "/images/dropdownmenu/ifx-dropdownmenu-m-icon_candidate.png",
+        backgroundColor: "#ffffff"
+    }
 ]
 
 function invertColor(hex) {
@@ -224,6 +236,13 @@ const surveyJson = {
     showPrevButton: true,
     completeText: "Submit",
     startSurveyText: "Start Survey",
+
+    showProgressBar: true,
+    progressBarLocation: "auto",
+    progressBarType: "pages",
+    progressBarShowPageNumbers: false,
+    progressBarShowPageTitles: false,
+
     // cookieName: "visualverifier_survey",
 };
 
