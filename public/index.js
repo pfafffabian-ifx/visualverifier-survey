@@ -5,6 +5,12 @@ const comparisons = [
         baseline: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/01afb14f-8316-41a4-a624-bd3b80634dfc",
         implementation: "https://s3muccepht.infineon.com/visualverifier/candidates/a8f52d22-3efd-40fa-b9cf-2a359accfcdc/visual-artifact.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=SO6UTD7307PAV4KMB6H1%2F20250907%2Feu-muc%2Fs3%2Faws4_request&X-Amz-Date=20250907T000700Z&X-Amz-Expires=86400&X-Amz-Signature=27ac011fb285734660213fd996e935e80f36864b1b04c86f29e9519fa40f9596&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         backgroundColor: "#ffffff"
+    },
+    {
+        name: "image1",
+        baseline: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/01afb14f-8316-41a4-a624-bd3b80634dfc",
+        implementation: "https://s3muccepht.infineon.com/visualverifier/candidates/a8f52d22-3efd-40fa-b9cf-2a359accfcdc/visual-artifact.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=SO6UTD7307PAV4KMB6H1%2F20250907%2Feu-muc%2Fs3%2Faws4_request&X-Amz-Date=20250907T000700Z&X-Amz-Expires=86400&X-Amz-Signature=27ac011fb285734660213fd996e935e80f36864b1b04c86f29e9519fa40f9596&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        backgroundColor: "#ffffff"
     }
 ]
 
@@ -33,7 +39,38 @@ const surveyJson = {
                         <p>
                             Your feedback is extremely valuable for my work, and I am very grateful for your time and support. Thank you! 🙏
                         </p>
-                    `
+                    `,
+                    isRequired: true,
+                    requiredErrorText: "Please submit an answer."
+                }
+            ]
+        },
+        {
+            name: "demographics",
+            title: "Demographics",
+            elements: [
+                {
+                    name: "role",
+                    title: "What best describes your role?",
+                    type: "dropdown",
+                    isRequired: true,
+                    requiredErrorText: "Please submit an answer.",
+                    choices: [
+                        "Software Developer",
+                        "Designer",
+                        "Product Manager",
+                        "Other"
+                    ]
+                },
+                {
+                    name: "experience",
+                    title: "How would you rate your experience with UI design and development?",
+                    type: "rating",
+                    rateType: "stars",
+                    minRateDescription: "Novice",
+                    maxRateDescription: "Expert",
+                    isRequired: true,
+                    requiredErrorText: "Please submit an answer."
                 }
             ]
         },
@@ -81,12 +118,19 @@ const surveyJson = {
                     ],
                     type: "rating",
                     rateType: "labels",
+                    isRequired: true,
+                    requiredErrorText: "Please submit an answer."
                 }
             
             ],
         }))
     ],
-    cookieName: "visualverifier_survey",
+    firstPageIsStartPage: true,
+    showNavigationButtons: true,
+    showPrevButton: true,
+    completeText: "Submit",
+    startSurveyText: "Start Survey",
+    // cookieName: "visualverifier_survey",
 };
 
 document.addEventListener("DOMContentLoaded", function() {
