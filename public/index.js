@@ -22,7 +22,7 @@ const comparisons = [
     {
         name: "ifx-checkbox-s-unchecked-error",
         baseline: "/images/checkbox/ifx-checkbox-s-unchecked-error_baseline.png",
-        implementation: "/images/checkbox/ifx-checkbox-s-unchecked-error_candidate.png", // TODO: Missing
+        implementation: "/images/checkbox/ifx-checkbox-s-unchecked-error_candidate.png",
         backgroundColor: "#ffffff"
     },
     //  DROPDOWN MENU
