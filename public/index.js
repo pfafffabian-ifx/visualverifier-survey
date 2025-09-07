@@ -154,6 +154,7 @@ const surveyJson = {
                             img-comparison-slider img {
                                 width: 100%;
                                 height: auto; /* Maintains aspect ratio */
+                                object-fit: contain;
                             }
                         </style>
                         <div class="sd-element--with-frame sd-element" style="display: flex; flex-direction: column; align-items: center;">
@@ -168,6 +169,18 @@ const surveyJson = {
                                 <p>Implementation</p>
                                 <p>Design</p>
                             </div>
+
+                            <details style="align-self: start; margin-top: 10px; cursor: pointer;">
+                                <summary>Click to show a side-by-side comparison</summary>
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                                    <div style="flex: 1; min-width: 240px; text-align: center;">
+                                        <img style="border: 1px solid black; max-width: 100%; height: auto" slot="first" src="${comparison.implementation}" />
+                                    </div>
+                                    <div style="flex: 1; min-width: 240px; text-align: center;">
+                                        <img style="border: 1px solid black; max-width: 100%; height: auto" slot="second" src="${comparison.baseline}" />
+                                    </div>
+                                </div>
+                            </details>
                         </div>
                     `
                 },
