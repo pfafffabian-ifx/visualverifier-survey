@@ -13,12 +13,27 @@ const surveyJson = {
         {
             name: "page1",
             title: "Image Comparison Survey",
-            description: "Please compare the following images and rate the implementation.",
             elements: [
                 {
                     name: "introduction",
                     type: "html",
-                    html: "<p>You will be shown pairs of images. Please compare them and provide your feedback.</p>"
+                    html: `
+                        <p>
+                            My thesis is coming to an end, and I am now in the evaluation phase.
+                        </p>
+                        <p>
+                            In this survey, you will see pairs of images (design vs. implementation). 
+                            <br>
+                            For each pair, please judge whether the implementation looks visually correct compared to the reference.
+                        </p>
+                        <p>
+                            The survey takes about 5-10 minutes to complete.
+                            Please submit your answers by 13.09.
+                        </p>
+                        <p>
+                            Your feedback is extremely valuable for my work, and I am very grateful for your time and support. Thank you! 🙏
+                        </p>
+                    `
                 }
             ]
         },
