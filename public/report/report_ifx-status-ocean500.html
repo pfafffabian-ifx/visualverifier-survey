@@ -123,39 +123,13 @@
 
                     if (approveBtn) {
                         approveBtn.addEventListener("click", () => {
-                            sendPatchRequest("approved")
+                            showAlert("You approved the result. The next test run will be verified against this image.", "success");
                         });
                     }
                     if (rejectBtn) {
                         rejectBtn.addEventListener("click", () => {
-                            sendPatchRequest("rejected")
+                            showAlert("You rejected the result. The baseline image will not be updated.", "error");
                         });
-                    }
-
-                    function sendPatchRequest(status) {
-                        console.log("Sending request to set status to: " + status);
-                        const body = {
-                            status: status
-                        };
-                        fetch('https://test-lifecycle-management-play-visual-verifier.apps.eu-at-4.icp.infineon.com/api/v1/testrun/0557c353-b31b-495f-ba94-96e98d79f42f', {
-                            method: 'PATCH',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(body)
-                        })
-                            .then(response => {
-                                if (response.ok) {
-                                    showAlert("Request to set status to " + status + " was successful.", "success");
-                                } else {
-                                    showAlert("Failed to set status to " + status + ". Please try again.", "error");
-                                }
-                            })
-                            .catch(error => {
-                                console.error(error);
-                                showAlert("An error occurred while sending the request.", "error");
-                            });
-
                     }
 
                     function showAlert(message, type) {
