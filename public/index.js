@@ -445,7 +445,8 @@ const surveyJson = {
                     html: `  
                         <style>
                             img {
-                                background-color: ${comparison.backgroundColor};
+                                // background-color: ${comparison.backgroundColor};
+                                background-image: url("data:image/svg+xml,%3csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3e%3crect fill='%23ffffff' width='20' height='20'/%3e%3crect fill='%23cccccc' width='10' height='10'/%3e%3crect fill='%23cccccc' x='10' y='10' width='10' height='10'/%3e%3c/svg%3e");
                             }
 
                             img-comparison-slider {
@@ -785,12 +786,10 @@ function saveSurveyResults(url, json) {
             // Handle success
         } else {
             console.error("Error saving survey results.");
-            alert("An error occurred while submitting your responses.");
             // Handle error
         }
     })
     .catch(error => {
-        alert("An error occurred while submitting your responses.");
         // Handle error
     });
 }
