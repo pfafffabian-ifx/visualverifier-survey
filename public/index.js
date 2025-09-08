@@ -542,15 +542,7 @@ const surveyJson = {
                 {
                     name: `${comparison.name}-rating`,
                     title: "Is this implementation visually consistent with the design?",
-                    rateValues: [
-                        { value: 1, text: "Strong No" },
-                        { value: 2, text: "No" },
-                        { value: 3, text: "Unsure" },
-                        { value: 4, text: "Yes" },
-                        { value: 5, text: "Strong Yes" }
-                    ],
-                    type: "rating",
-                    rateType: "labels",
+                    type: "boolean",
                     // isRequired: true,
                     requiredErrorText: "Please submit an answer."
                 },
