@@ -394,7 +394,7 @@ const surveyJson = {
                         "Software Development / Engineering",
                         "UX / Design",
                         "Product or Project Management",
-                        "Communications / Marketing",
+                        "QA / Testing",
                         "Other"
                     ]
                 },
