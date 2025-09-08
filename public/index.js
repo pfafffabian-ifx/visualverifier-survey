@@ -655,6 +655,60 @@ const surveyJson = {
                 }
             ]}
         }),
+        {
+            title: "Final Thoughts",
+            name: "finalThoughts",
+            elements: [
+                {
+                    name: "reportsUsefulness",
+                    title: "Overall, do these reports help you judge whether an implementation is visually consistent with the design?",
+                    type: "rating",
+                    rateMin: 1,
+                    rateMax: 5,
+                    rateType: "stars",
+                    minRateDescription: "Not at all",
+                    maxRateDescription: "Very much",
+                    isRequired: true,
+                    requiredErrorText: "Please submit an answer."
+                },
+                {
+                    name: "reportsTrust",
+                    title: "How much do you trust the results shown in these reports?",
+                    type: "rating",
+                    rateMin: 1,
+                    rateMax: 5,
+                    rateType: "stars",
+                    minRateDescription: "Not at all",
+                    maxRateDescription: "Very much",
+                    isRequired: true,
+                    requiredErrorText: "Please submit an answer."
+                },
+                {
+                    name: "reportsUnderstandability",
+                    title: "How easy are the reports to understand?",
+                    type: "rating",
+                    rateMin: 1,
+                    rateMax: 5,
+                    rateType: "stars",
+                    minRateDescription: "Not at all",
+                    maxRateDescription: "Very much",
+                    isRequired: true,
+                    requiredErrorText: "Please submit an answer."
+                },
+                {
+                    name: "reportsImprovement",
+                    title: "If you could change one thing in these reports, what would it be?",
+                    type: "comment",
+                    isRequired: false
+                },
+                {
+                    name: "additionalFeedback",
+                    title: "Any additional feedback or suggestions?",
+                    type: "comment",
+                    isRequired: false
+                }
+            ]
+        },
     ],
     firstPageIsStartPage: true,
     showNavigationButtons: true,
