@@ -437,6 +437,7 @@ const surveyJson = {
             ]
         },
         ...comparisons.map(comparison => ({
+            title: `Component: ${comparison.name}`,
             elements: [{
                     name: `${comparison.name}`,
                     title: "Compare these two images:",
