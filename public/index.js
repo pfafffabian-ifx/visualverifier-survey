@@ -723,6 +723,33 @@ const surveyJson = {
     progressBarShowPageTitles: false,
 
     // cookieName: "visualverifier_survey",
+
+    completedHtml: `
+    <div style="max-width:680px;margin:0 auto;padding:28px 20px;text-align:center">
+        <h2 style="margin:0 0 12px;font-size:28px;line-height:1.2">Thank you for your time! 🎉</h2>
+        <p style="margin:0 0 10px;font-size:16px;line-height:1.6">
+            Your responses have been recorded successfully and will help me evaluate how well the tool matches designs and implementations.
+        </p>
+        <p style="margin:0 18px 18px;font-size:16px;line-height:1.6">
+            I truly appreciate your support. Every answer contributes to more reliable results and a better report.
+        </p>
+
+        <div style="background:#f6f7f9;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;margin:18px 0;text-align:left">
+            <strong>What happens next?</strong>
+            <ul style="margin:10px 0 0 18px;padding:0;line-height:1.6">
+            <li>I'll finish writing my thesis (hand-in is next week!) 📝</li>
+            <li>Your ratings will be compared against the tool's automated analysis</li>
+            <li>Hopefully we'll see promising results in the evaluation 🤞</li>
+            <li>I can give a live demo with detailed findings once complete</li>
+            <li>We can explore whether the tool is ready for integration with the DDS</li>
+            </ul>
+        </div>
+
+        <p style="margin:14px 0 0;font-size:12px;color:#9ca3af">
+            You may safely close this tab now.
+        </p>
+    </div>
+    `
 };
 
 document.addEventListener("DOMContentLoaded", function() {
