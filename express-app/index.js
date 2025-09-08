@@ -27,6 +27,8 @@ function sendJsonResult (res, obj) {
 }
 
 app.post(apiBaseAddress + "/post", (req, res) => {
+  console.log("Received survey submission");
+  console.log(req.body)
   const storage = getStorage(req);
   const postId = req.body.postId;
   const surveyResult = req.body.surveyResult;

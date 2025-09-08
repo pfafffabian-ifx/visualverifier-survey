@@ -15,7 +15,7 @@ const dbConfig = {
     : null
 };
 
-const url = process.env.CONNECTION_STRING || `mongodb://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}:${dbConfig.port}/`;
+const url = process.env.CONNECTION_STRING;
 const client = new MongoClient(url);
 
 function MongoStorage() {
