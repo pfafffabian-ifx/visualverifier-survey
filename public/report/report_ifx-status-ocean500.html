@@ -50,7 +50,6 @@
                 </div>
                 <div class="img-comp-footer">
                         <ifx-checkbox id="diffCheckbox" size="s">Show Difference</ifx-checkbox>
-                    <ifx-checkbox id="darkBackgroundCheckbox" size="s">Dark Background</ifx-checkbox>
                 </div>
             </div>
         </div>
@@ -315,7 +314,7 @@
 
     .img-comp-footer {
         display: flex;
-        justify-content: space-between;
+        justify-content: start;
         margin-top: 10px;
     }
 
@@ -490,12 +489,5 @@
         box.style.borderColor = color || "red";
 
         container.appendChild(box);
-    }
-
-    const darkBackgroundCheckbox = document.getElementById("darkBackgroundCheckbox");
-    if (darkBackgroundCheckbox) {
-        darkBackgroundCheckbox.addEventListener("ifxChange", (event) => {
-            document.documentElement.style.setProperty('--img-bg', event.detail ? '#1D1D1D' : '#FFFFFF');
-        });
     }
 </script>
