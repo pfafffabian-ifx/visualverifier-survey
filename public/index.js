@@ -785,11 +785,12 @@ function saveSurveyResults(url, json) {
             // Handle success
         } else {
             console.error("Error saving survey results.");
+            alert("An error occurred while submitting your responses.");
             // Handle error
         }
     })
     .catch(error => {
-        console.error("Error saving survey results:", error);
+        alert("An error occurred while submitting your responses.");
         // Handle error
     });
 }

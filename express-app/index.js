@@ -7,10 +7,10 @@ const apiBaseAddress = "/api";
 const app = express();
 app.use(
   session({
-    secret: "mysecret",
+    secret: process.env.SESSION_SECRET || "mysecret-change-this-in-production",
     resave: true,
     saveUninitialized: true,
-    // cookie: { secure: true }
+    cookie: { secure: process.env.NODE_ENV === 'production' }
   })
 );
 app.use(bodyParser.json());
