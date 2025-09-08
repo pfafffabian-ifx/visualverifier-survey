@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Visual Verifier Report</title>
+
+    <!-- DDS -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@infineon/infineon-design-system-stencil@37.12.0/dist/infineon-design-system-stencil/infineon-design-system-stencil.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@infineon/infineon-design-system-stencil@37.12.0/dist/infineon-design-system-stencil/infineon-design-system-stencil.css">
+</head>
+<body>
+<ifx-navbar  show-logo-and-appname="true" application-name="Visual Verifier Report" fixed="false"></ifx-navbar>
+<div class="title">
+    <h1>Report for 'ifx-spinner-default-m'</h1>
+        <ifx-status label="FAILED" color="red-500" border="true"/>
+</div>
+<div class="container">
+    <div class="content-wrapper">
+        <div>
+            <span style="font-weight: bold">Testrun: </span><span>83b0a1c4-3b2d-4974-a9df-d0d878393fb1</span>
+        </div>
+            <div class="violations">
+                <h3>Violations</h3>
+<div class="violationsList">
+<ifx-notification variant="error" icon="warning16" style="position: relative;">
+        <span>
+            The images do not match
+        </span>
+        <ifx-checkbox-group alignment="horizontal" style="margin-left: auto">
+                <ifx-checkbox
+                        id="checkbox-baseline-INCORRECT_IMAGE-0"
+                        size="s">
+                    Baseline Box
+                </ifx-checkbox>
+                <ifx-checkbox
+                        id="checkbox-candidate-INCORRECT_IMAGE-0"
+                        size="s">
+                    Candidate Box
+                </ifx-checkbox>
+        </ifx-checkbox-group>
+        <script>
+            (function() {
+                    const baselineCheckbox = document.getElementById("checkbox-baseline-INCORRECT_IMAGE-0");
+                    if (baselineCheckbox) {
+                        baselineCheckbox.addEventListener("ifxChange", (event) => {
+                            toggleBoundingBox(
+                                "box-baseline-INCORRECT_IMAGE-0",
+                                    0.0,
+                                    0.0,
+                                    40.0,
+                                    40.0,
+                                event.detail,
+                                "red"
+                            );
+                        });
+                    }
+                    const candidateCheckbox = document.getElementById("checkbox-candidate-INCORRECT_IMAGE-0");
+                    if (candidateCheckbox) {
+                        candidateCheckbox.addEventListener("ifxChange", (event) => {
+                            toggleBoundingBox(
+                                "box-candidate-INCORRECT_IMAGE-0",
+                                    0.0,
+                                    0.0,
+                                    40.0,
+                                    40.0,
+                                event.detail,
+                                "blue"
+                            );
+                        });
+                    }
+            })();
+        </script>
+        </script>
+</ifx-notification></div>            </div>
+
+        <div class="left-col">
+            <h3>Image Comparison</h3>
+            <div class="img-comp">
+                <div class="img-comp-header">
+                    <span>Actual</span>
+                    <span>Expected</span>
+                </div>
+                <div class="img-comp-container">
+                    <div class="img-comp-img base">
+                        <img id="baselineImage" src="/report/ifx-spinner-default-m_baseline.png" alt="Baseline Image" >
+                    </div>
+                    <div class="img-comp-img overlay">
+                        <img id="candidateImage" src="/report/ifx-spinner-default-m_candidate.png" alt="Candidate Image" >
+                    </div>
+                        <div id="diff" class="img-comp-img overlay hidden">
+                            <img src="/report/ifx-spinner-default-m_diff.png" alt="Difference Image">
+                        </div>
+                    <div id="baselineOverlay" class="overlay-box-container"></div>
+                    <div class="img-comp-slider">
+                        <div class="img-comp-slider-arrow left-arrow">
+                            <ifx-icon icon="arrowTriangleLeft16"></ifx-icon>
+                        </div>
+                        <div class="img-comp-slider-bar"></div>
+                        <div class="img-comp-slider-arrow right-arrow">
+                            <ifx-icon icon="arrowTriangleRight16"></ifx-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="img-comp-footer">
+                        <ifx-checkbox id="diffCheckbox" size="s">Show Difference</ifx-checkbox>
+                    <ifx-checkbox id="darkBackgroundCheckbox" size="s">Dark Background</ifx-checkbox>
+                </div>
+            </div>
+        </div>
+        <div class="right-col">
+            <h3>Test Details</h3>
+            <div>
+                <span>Metrics</span>
+            </div>
+            <ifx-basic-table
+                    cols='[{"headerName":"Metric","field":"key","sortable":false},{"headerName":"Value","field":"value","sortable":false}]'
+                    rows='[ {
+  &quot;key&quot; : &quot;diffPercentage&quot;,
+  &quot;value&quot; : &quot;0.166875&quot;
+}, {
+  &quot;key&quot; : &quot;diffPixels&quot;,
+  &quot;value&quot; : &quot;267.0&quot;
+} ]'
+                    table-height="auto"
+                    row-height="compact"
+                    variant="default">
+            </ifx-basic-table>
+
+            <h3>Testrun Configuration</h3>
+            <ifx-basic-table
+                    cols='[{"headerName":"Property","field":"key","sortable":false},{"headerName":"Value","field":"value","sortable":false}]'
+                    rows='[ {
+  &quot;key&quot; : &quot;comparison.imageDifferenceThreshold&quot;,
+  &quot;value&quot; : &quot;0.2&quot;
+}, {
+  &quot;key&quot; : &quot;comparison.fieldOfView&quot;,
+  &quot;value&quot; : &quot;45.0&quot;
+}, {
+  &quot;key&quot; : &quot;comparison.engine&quot;,
+  &quot;value&quot; : &quot;moran&quot;
+}, {
+  &quot;key&quot; : &quot;comparison.differenceThreshold&quot;,
+  &quot;value&quot; : &quot;0.2&quot;
+}, {
+  &quot;key&quot; : &quot;comparison.colorSensitivity&quot;,
+  &quot;value&quot; : &quot;1.0&quot;
+}, {
+  &quot;key&quot; : &quot;comparison.luminanceSensitivity&quot;,
+  &quot;value&quot; : &quot;100.0&quot;
+}, {
+  &quot;key&quot; : &quot;comparison.colorThreshold&quot;,
+  &quot;value&quot; : &quot;0.85&quot;
+}, {
+  &quot;key&quot; : &quot;comparison.matchingThreshold&quot;,
+  &quot;value&quot; : &quot;200&quot;
+}, {
+  &quot;key&quot; : &quot;comparison.layoutThreshold&quot;,
+  &quot;value&quot; : &quot;5&quot;
+} ]'
+                    table-height="auto"
+                    row-height="compact"
+                    variant="default">
+            </ifx-basic-table>
+
+            <h3>Review</h3>
+            <div class="controlArea">
+                <ifx-button id="approveBtn" type="button" theme="default" full-width="true" ariaLabel="Approve the testcase">
+                    Approve
+                </ifx-button>
+                <ifx-button id="rejectBtn" type="button" theme="danger" full-width="true" ariaLabel="Reject the testcase">
+                    Reject
+                </ifx-button>
+                <script>
+                    const approveBtn = document.getElementById("approveBtn");
+                    const rejectBtn = document.getElementById("rejectBtn");
+
+                    if (approveBtn) {
+                        approveBtn.addEventListener("click", () => {
+                            sendPatchRequest("approved")
+                        });
+                    }
+                    if (rejectBtn) {
+                        rejectBtn.addEventListener("click", () => {
+                            sendPatchRequest("rejected")
+                        });
+                    }
+
+                    function sendPatchRequest(status) {
+                        console.log("Sending request to set status to: " + status);
+                        const body = {
+                            status: status
+                        };
+                        fetch('https://test-lifecycle-management-play-visual-verifier.apps.eu-at-4.icp.infineon.com/api/v1/testrun/83b0a1c4-3b2d-4974-a9df-d0d878393fb1', {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(body)
+                        })
+                            .then(response => {
+                                if (response.ok) {
+                                    showAlert("Request to set status to " + status + " was successful.", "success");
+                                } else {
+                                    showAlert("Failed to set status to " + status + ". Please try again.", "error");
+                                }
+                            })
+                            .catch(error => {
+                                console.error(error);
+                                showAlert("An error occurred while sending the request.", "error");
+                            });
+
+                    }
+
+                    function showAlert(message, type) {
+                        const alert = document.createElement('ifx-alert');
+                        alert.setAttribute('variant', type === "success" ? "success" : "danger");
+                        alert.setAttribute('icon', type === "success" ? "c-info-16" : "warning16");
+                        alert.setAttribute('duration', "5000");
+                        alert.textContent = message;
+                        alert.style.position = "fixed";
+                        alert.style.bottom = "20px";
+                        alert.style.left = "20px";
+                        alert.style.zIndex = "1000";
+
+                        document.body.appendChild(alert);
+
+                        alert.addEventListener('ifxClose', () => {
+                            alert.remove();
+                        });
+
+                        setTimeout(() => {
+                            alert.remove();
+                        }, 5000);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<style>
+    :root {
+        font-family: 'Source Sans 3', sans-serif;
+        --comp-width: #F7F7F7;
+    }
+
+    h3 {
+        margin-top: 4px;
+        margin-bottom: 2px;
+    }
+
+    .title {
+        margin: 0px 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+        line-height: 0.8;
+    }
+
+    .container {
+        margin: 0px 20px;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        max-width: 1200px;
+        row-gap: 16px;
+        column-gap: 32px;
+    }
+
+    .left-col {
+        flex: 0 0 auto;
+    }
+
+    .right-col {
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+    }
+
+    .violations {
+        width: 100%;
+    }
+
+    .violationsList {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .controlArea {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        gap: 8px;
+    }
+
+    ifx-icon {
+        color: #3B9B91;
+        width: 32px;
+        height: 32px;
+    }
+
+    .img-comp-container {
+        position: relative;
+        width: 800px;
+        max-width: 80vw;
+        height: auto;
+    }
+
+    .img-comp-img {
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .img-comp-img.base {
+        position: static;
+    }
+
+
+    .img-comp-img.overlay {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+    }
+
+    .img-comp-img.base img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    #candidateImage, #baselineImage {
+        background-color: var(--img-bg);
+    }
+
+    .img-comp-img.overlay img {
+        width: var(--comp-width);
+        height: auto;
+        display: block;
+        image-rendering: crisp-edges;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .img-comp-slider {
+        cursor: ew-resize;
+        position: absolute;
+        z-index: 10;
+        height: 100%;
+        padding: 0px 4px;
+    }
+
+    .img-comp-slider-bar {
+        width: 2px;
+        height: 100%;
+        background-color: #3B9B91;
+        opacity: 0.7;
+    }
+
+    .img-comp-slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        font-weight: bold;
+        color: #3B9B91;
+        cursor: pointer;
+        pointer-events: none;
+    }
+
+    .left-arrow {
+        left: -18px;
+    }
+
+    .right-arrow {
+        right: -18px;
+    }
+
+    .img-comp-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .img-comp-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .overlay-box-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 5;
+    }
+
+    .bounding-box {
+        position: absolute;
+        border: 2px solid red;
+        box-sizing: border-box;
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        initializeComparisonTool();
+        handleResizeEvent();
+    });
+
+    function initializeComparisonTool() {
+        const candidateImg = document.querySelector("#candidateImage");
+        const baselineImg = document.querySelector("#baselineImage");
+
+        if (!candidateImg || !baselineImg) {
+            console.error("Candidate or baseline image not found.");
+            return;
+        }
+
+        // Wait for images to load
+        const loadPromises = [candidateImg, baselineImg].map(img => new Promise(resolve => {
+            if (img.complete) {
+                resolve();
+            } else {
+                img.onload = resolve;
+                img.onerror = resolve;
+            }
+        }));
+
+        Promise.all(loadPromises).then(() => {
+            const { width: w, height: h } = baselineImg;
+            console.log("Baseline image loaded with dimensions:", w, h);
+
+            document.documentElement.style.setProperty('--comp-width', w + "px");
+            initComparisons(w, h);
+        });
+    }
+
+    function initComparisons(fullW, fullH) {
+        const overlays = document.querySelectorAll('.overlay');
+        const slider = document.querySelector('.img-comp-slider');
+
+        if (!overlays.length || !slider) return;
+
+        // Set initial geometry for overlays and slider
+        setInitialGeometry(overlays, slider, fullW, fullH);
+
+        // Dragging logic for the slider
+        let dragging = false;
+
+        const startDrag = e => {
+            e.preventDefault();
+            dragging = true;
+            attachDragEvents(moveDrag, stopDrag);
+        };
+
+        const stopDrag = () => {
+            dragging = false;
+            detachDragEvents(moveDrag, stopDrag);
+        };
+
+        const moveDrag = e => {
+            if (!dragging) return;
+            const x = clamp(getCursorPos(e, overlays[0]), 0, fullW);
+
+            overlays.forEach(o => { o.style.width = x + "px"; });
+            slider.style.left = x - slider.offsetWidth / 2 + "px";
+        };
+
+        // Attach event listeners for slider dragging
+        slider.addEventListener('mousedown', startDrag);
+        slider.addEventListener('touchstart', startDrag, { passive: false });
+        window.addEventListener('mouseup', stopDrag);
+        window.addEventListener('touchend', stopDrag);
+    }
+
+    function setInitialGeometry(overlays, slider, fullW, fullH) {
+        overlays.forEach(o => { o.style.width = (fullW/2) + "px" });
+        slider.style.height = fullH + "px";
+        slider.style.top = '0';
+        slider.style.left = (fullW / 2 - slider.offsetWidth / 2) + "px";
+    }
+
+    function attachDragEvents(moveHandler, stopHandler) {
+        window.addEventListener('mousemove', moveHandler);
+        window.addEventListener('touchmove', moveHandler, { passive: false });
+        window.addEventListener('mouseup', stopHandler);
+        window.addEventListener('touchend', stopHandler);
+    }
+
+    function detachDragEvents(moveHandler, stopHandler) {
+        window.removeEventListener('mousemove', moveHandler);
+        window.removeEventListener('touchmove', moveHandler);
+        window.removeEventListener('mouseup', stopHandler);
+        window.removeEventListener('touchend', stopHandler);
+    }
+
+    function getCursorPos(e, overlay) {
+        const ev = e.touches ? e.touches[0] : e;
+        const rect = overlay.getBoundingClientRect();
+        return ev.pageX - rect.left - window.pageXOffset;
+    }
+
+    function clamp(value, min, max) {
+        return Math.max(min, Math.min(max, value));
+    }
+
+    function toggleDiff(id) {
+        const overlay = document.getElementById(id);
+        if (!overlay) return;
+
+        overlay.classList.toggle("hidden");
+    }
+
+    const diffCheckbox = document.getElementById("diffCheckbox");
+    if (diffCheckbox) {
+        diffCheckbox.addEventListener("ifxChange", () => toggleDiff("diff"));
+    }
+
+    function handleResizeEvent() {
+        window.addEventListener("resize", () => {
+            const baselineImg = document.querySelector("#baselineImage");
+            const candidateImg = document.querySelector("#candidateImage");
+
+            if (baselineImg && candidateImg) {
+                const { width: w, height: h } = baselineImg;
+                document.documentElement.style.setProperty('--comp-width', w + 'px');
+                initComparisons(w, h);
+            }
+        });
+    }
+
+    function toggleBoundingBox(id, x, y, width, height, show, color) {
+        const container = document.getElementById("baselineOverlay");
+        if (!container) return;
+
+        const boxId = id;
+        const existing = document.getElementById(boxId);
+
+        if (!show) {
+            if (existing) existing.remove();
+            return;
+        }
+
+        if (existing) return;
+
+        const baselineImg = document.getElementById("baselineImage");
+        const scale = baselineImg.clientWidth / baselineImg.naturalWidth;
+
+        const box = document.createElement("div");
+        box.id = boxId;
+        box.classList.add("bounding-box");
+        box.style.left = x * scale + "px";
+        box.style.top = y * scale + "px";
+        box.style.width = width * scale + "px";
+        box.style.height = height * scale + "px";
+        box.style.borderColor = color || "red";
+
+        container.appendChild(box);
+    }
+
+    const darkBackgroundCheckbox = document.getElementById("darkBackgroundCheckbox");
+    if (darkBackgroundCheckbox) {
+        darkBackgroundCheckbox.addEventListener("ifxChange", (event) => {
+            document.documentElement.style.setProperty('--img-bg', event.detail ? '#1D1D1D' : '#FFFFFF');
+        });
+    }
+</script>

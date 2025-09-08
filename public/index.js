@@ -239,7 +239,7 @@ const comparisons = [
         name: "ifx-iconbutton-secondary-s-square-disabled",
         baseline: "/images/iconbutton/ifx-iconbutton-secondary-s-square-disabled_baseline.png",
         implementation: "/images/iconbutton/ifx-iconbutton-secondary-s-square-disabled_candidate.png",
-        backgroundColor: "#ffffff"
+        backgroundColor: "#000000"
     },
     {
         name: "ifx-iconbutton-tertiary-l-square",
@@ -591,7 +591,7 @@ const surveyJson = {
                 }
             ]
         },
-        ...[ 'ifx-status-ocean500', 'ifx-footer-landscape-large' ].map(component => {
+        ...[ 'ifx-status-ocean500', 'ifx-footer-landscape-large', 'ifx-spinner-m' ].map(component => {
             return {
                 name: `report_${component}`,
                 title: `Report Preview (${component})`,
