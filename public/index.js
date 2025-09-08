@@ -646,6 +646,12 @@ const surveyJson = {
                     maxRateDescription: "Very helpful",
                     isRequired: true,
                     requiredErrorText: "Please submit an answer."
+                },
+                {
+                    name: `report_${component}_comments`,
+                    title: "Any additional comments or suggestions for improvement?",
+                    type: "comment",
+                    isRequired: false
                 }
             ]}
         }),
