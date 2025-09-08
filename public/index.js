@@ -722,7 +722,7 @@ const surveyJson = {
     progressBarShowPageNumbers: false,
     progressBarShowPageTitles: false,
 
-    // cookieName: "visualverifier_survey",
+    cookieName: "visualverifier_survey",
 
     completedHtml: `
     <div style="max-width:680px;margin:0 auto;padding:28px 20px;text-align:center">
