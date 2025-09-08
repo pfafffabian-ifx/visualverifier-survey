@@ -449,7 +449,7 @@ const surveyJson = {
 
                             img-comparison-slider {
                                 width: 100%;
-                                max-width: 600px;
+                                max-width: 1200px;
                                 --divider-color: ${invertColor(comparison.backgroundColor)};
                                 --default-handle-color: ${invertColor(comparison.backgroundColor)};
                                 --divider-width: 2px;
@@ -528,11 +528,11 @@ const surveyJson = {
                             <div style="align-self: start; margin-top: 16px; cursor: pointer;">
                                 <span class="sv-string-viewer" style="font-weight: 600">Side-by-Side comparison</span>
                                 <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
-                                    <div style="flex: 1; min-width: 240px; text-align: center;">
-                                        <img style="border: 1px solid black; max-width: 100%; height: auto" slot="first" src="${comparison.implementation}" />
+                                    <div style="flex: 1; max-width: 50%; text-align: center;">
+                                        <img style="border: 1px solid black; min-width:240px; height: auto" slot="first" src="${comparison.implementation}" />
                                     </div>
-                                    <div style="flex: 1; min-width: 240px; text-align: center;">
-                                        <img style="border: 1px solid black; max-width: 100%; height: auto" slot="second" src="${comparison.baseline}" />
+                                    <div style="flex: 1; max-width: 50%; text-align: center;">
+                                        <img style="border: 1px solid black; min-width:240px; height: auto" slot="second" src="${comparison.baseline}" />
                                     </div>
                                 </div>
                             </details>
