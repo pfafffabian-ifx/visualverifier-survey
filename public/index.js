@@ -368,7 +368,7 @@ const surveyJson = {
                             For each pair, please judge whether the implementation looks visually correct compared to the reference.
                         </p>
                         <p>
-                            The survey takes about 5-10 minutes to complete.
+                            The survey takes about 15 minutes to complete.
                             Please submit your answers by 13.09.
                         </p>
                         <p>
