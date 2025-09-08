@@ -436,7 +436,7 @@ const surveyJson = {
                 }
             ]
         },
-        ...comparisons.map(comparison => ({
+        ...shuffle(comparisons).map(comparison => ({
             title: `Component: ${comparison.name}`,
             elements: [{
                     name: `${comparison.name}`,
