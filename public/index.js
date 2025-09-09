@@ -286,15 +286,15 @@ const comparisons = [
     },
     // STATUS
     {
-        name: "ifx-status-engineering300-border",
-        baseline: "/images/status/ifx-status-engineering300-border_baseline.png",
-        implementation: "/images/status/ifx-status-engineering300-border_candidate.png",
-        backgroundColor: "#ffffff"
-    },
-    {
         name: "ifx-status-engineering300",
         baseline: "/images/status/ifx-status-engineering300_baseline.png",
         implementation: "/images/status/ifx-status-engineering300_candidate.png",
+        backgroundColor: "#ffffff"
+    },
+    {
+        name: "ifx-status-red500",
+        baseline: "/images/status/ifx-status-red500_baseline.png",
+        implementation: "/images/status/ifx-status-red500_candidate.png",
         backgroundColor: "#ffffff"
     },
     {
@@ -304,21 +304,9 @@ const comparisons = [
         backgroundColor: "#ffffff"
     },
     {
-        name: "ifx-status-ocean500",
-        baseline: "/images/status/ifx-status-ocean500_baseline.png",
-        implementation: "/images/status/ifx-status-ocean500_candidate.png",
-        backgroundColor: "#ffffff"
-    },
-    {
         name: "ifx-status-orange500-border",
         baseline: "/images/status/ifx-status-orange500-border_baseline.png",
         implementation: "/images/status/ifx-status-orange500-border_candidate.png",
-        backgroundColor: "#ffffff"
-    },
-    {
-        name: "ifx-status-orange500",
-        baseline: "/images/status/ifx-status-orange500_baseline.png",
-        implementation: "/images/status/ifx-status-orange500_candidate.png",
         backgroundColor: "#ffffff"
     },
     // TOOLTIP
