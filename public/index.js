@@ -754,10 +754,15 @@ function surveyComplete (survey) {
         surveyResult: survey.data
     };
 
-    saveSurveyResults(
-        "/api/post",
-        payload
-    )
+    if (!window.location.toString().includes("infineon.com")) {
+        downloadResults(payload);
+        return;
+    } else {
+        saveSurveyResults(
+            "/api/post",
+            payload
+        );
+    }
 }
 
 function saveSurveyResults(url, json) {
@@ -826,4 +831,18 @@ function shuffle(array) {
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
+}
+
+function downloadResults(payload) {
+    const json = JSON.stringify(payload, null, 2);
+
+    const blob = new Blob([json], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `survey-response-${new Date().toISOString().split('T')[0]}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
 }
